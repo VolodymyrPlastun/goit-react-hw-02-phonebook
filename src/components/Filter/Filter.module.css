@@ -1,0 +1,11 @@
+.label {
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    color: grey;
+}
+
+.input {
+    width: 150px;
+    margin-top: 15px;
+}
