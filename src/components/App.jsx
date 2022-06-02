@@ -44,7 +44,6 @@ class App extends Component {
         contacts: [...prevState.contacts, contact]
       }))
     }
-    console.log(contact);
   }
 
 
@@ -53,18 +52,13 @@ class App extends Component {
     const visibleContacts = this.filterContactsByName();
 
     return (
-      <div
-        style={{
-          fontSize: 30,
-          color: '#010101'
-        }}
-      >
+      <div>
         <Section title="Phonebook">
           <ContactForm onSubmitAdd={this.addContact} />
 </Section>
         <Section title="Contacts">
 <Filter value={filter} onChange={this.changeFilter} />
-          <ContactList contacts={visibleContacts} onDeleteContact={this.deleteContact} />
+         {visibleContacts.length !== 0 && <ContactList contacts={visibleContacts} onDeleteContact={this.deleteContact} />} 
         </Section>
           
       </div>
